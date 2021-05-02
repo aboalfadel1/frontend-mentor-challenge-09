@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 14px;
+    background-color: hsl(235, 16%, 14%);
+    background-image: url(../images/bg-stars.svg), url(../images/pattern-hills.svg);
+    background-repeat: no-repeat;
+    background-position: top 0 left 0, top 76vh left 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.container {
+    margin: auto;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    margin-top: 50px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: normal;
+}
+
+.container .timer {
+    margin-top: 110px;
+    display: flex;
+}
+
+.timer .main {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(to bottom, #2C2C44 50%, #34364F 50%);
+    margin: 0 17.5px;
+    text-align: center;
+    position: relative;
+    line-height: 140px;
+    border-radius: 5px;
+    font-size: 5rem;
+    color: hsl(345, 95%, 68%);
+    box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.timer div .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.timer .main::after {
+    content: "";
+    width: 10px;
+    height: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transform: rotate( 90deg);
+    top: 48%;
+    left: -2px;
+}
+
+.timer .main::before {
+    content: "";
+    width: 10px;
+    height: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transform: rotate( -90deg);
+    top: 48%;
+    right: -2px;
+}
+
+.timer div h3 {
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #8686A2;
+    bottom: -110px;
+}
+
+.container .icons {
+    margin-top: 300px;
+    display: flex;
+}
+
+.container .icons div {
+    margin-right: 30px;
+    display: block;
+    cursor: pointer;
+}
+
+.container .icons div img {
+    transition: 0.3s;
+}
+
+.container .icons div:hover img {
+    background: hsl(345, 95%, 68%);
+}
+
+@media (max-width:767px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+    .timer .main {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 1.5rem;
+        overflow: unset;
+    }
+    .timer div h3 {
+        bottom: -60px;
+        font-size: 0.3rem;
+    }
+}
